@@ -55,6 +55,51 @@
     estree-walker "^2.0.1"
     picomatch "^2.2.2"
 
+"@swc/core-darwin-arm64@1.3.36":
+  version "1.3.36"
+  resolved "https://registry.npmjs.org/@swc/core-darwin-arm64/-/core-darwin-arm64-1.3.36.tgz"
+  integrity sha512-lsP+C8p9cC/Vd9uAbtxpEnM8GoJI/MMnVuXak7OlxOtDH9/oTwmAcAQTfNGNaH19d2FAIRwf+5RbXCPnxa2Zjw==
+
+"@swc/core-darwin-x64@1.3.36":
+  version "1.3.36"
+  resolved "https://registry.npmjs.org/@swc/core-darwin-x64/-/core-darwin-x64-1.3.36.tgz"
+  integrity sha512-jaLXsozWN5xachl9fPxDMi5nbWq1rRxPAt6ISeiYB6RJk0MQKH1634pOweBBem2pUDDzwDFXFw6f22LTm/cFvA==
+
+"@swc/core-linux-arm-gnueabihf@1.3.36":
+  version "1.3.36"
+  resolved "https://registry.npmjs.org/@swc/core-linux-arm-gnueabihf/-/core-linux-arm-gnueabihf-1.3.36.tgz"
+  integrity sha512-vcBdTHjoEpvJDbFlgto+S6VwAHzLA9GyCiuNcTU2v4KNQlFzhbO4A4PMfMCb/Z0RLJEr16tirfHdWIxjU3h8nw==
+
+"@swc/core-linux-arm64-gnu@1.3.36":
+  version "1.3.36"
+  resolved "https://registry.npmjs.org/@swc/core-linux-arm64-gnu/-/core-linux-arm64-gnu-1.3.36.tgz"
+  integrity sha512-o7f5OsvwWppJo+qIZmrGO5+XC6DPt6noecSbRHjF6o1YAcR13ETPC14k1eC9H1YbQwpyCFNVAFXyNcUbCeQyrQ==
+
+"@swc/core-linux-arm64-musl@1.3.36":
+  version "1.3.36"
+  resolved "https://registry.npmjs.org/@swc/core-linux-arm64-musl/-/core-linux-arm64-musl-1.3.36.tgz"
+  integrity sha512-FSHPngMi3c0fuGt9yY2Ubn5UcELi3EiPLJxBSC3X8TF9atI/WHZzK9PE9Gtn0C/LyRh4CoyOugDtSOPzGYmLQg==
+
+"@swc/core-linux-x64-gnu@1.3.36":
+  version "1.3.36"
+  resolved "https://registry.npmjs.org/@swc/core-linux-x64-gnu/-/core-linux-x64-gnu-1.3.36.tgz"
+  integrity sha512-PHSsH2rek5pr3e0K09VgWAbrWK2vJhaI7MW9TPoTjyACYjcs3WwjcjQ30MghXUs2Dc/bXjWAOi9KFTjq/uCyFg==
+
+"@swc/core-linux-x64-musl@1.3.36":
+  version "1.3.36"
+  resolved "https://registry.npmjs.org/@swc/core-linux-x64-musl/-/core-linux-x64-musl-1.3.36.tgz"
+  integrity sha512-4LfMYQHzozHCKkIcmQy83b+4SpI+mOp6sYNbXqSRz5dYvTVjegKZXe596P1U/87cK2cgR4uYvkgkgBXquaWvwQ==
+
+"@swc/core-win32-arm64-msvc@1.3.36":
+  version "1.3.36"
+  resolved "https://registry.npmjs.org/@swc/core-win32-arm64-msvc/-/core-win32-arm64-msvc-1.3.36.tgz"
+  integrity sha512-7y3dDcun79TAjCyk3Iv0eOMw1X/KNQbkVyKOGqnEgq9g22F8F1FoUGKHNTzUqVdzpHeJSsHgW5PlkEkl3c/d9w==
+
+"@swc/core-win32-ia32-msvc@1.3.36":
+  version "1.3.36"
+  resolved "https://registry.npmjs.org/@swc/core-win32-ia32-msvc/-/core-win32-ia32-msvc-1.3.36.tgz"
+  integrity sha512-zK0VR3B4LX5hzQ+7eD+K+FkxJlJg5Lo36BeahMzQ+/i0IURpnuyFlW88sdkFkMsc2swdU6bpvxLZeIRQ3W4OUg==
+
 "@swc/core-win32-x64-msvc@1.3.36":
   version "1.3.36"
   resolved "https://registry.npmjs.org/@swc/core-win32-x64-msvc/-/core-win32-x64-msvc-1.3.36.tgz"
@@ -197,6 +242,11 @@ fs-extra@^10.0.0:
     jsonfile "^6.0.1"
     universalify "^2.0.0"
 
+fsevents@~2.3.2:
+  version "2.3.2"
+  resolved "https://registry.npmjs.org/fsevents/-/fsevents-2.3.2.tgz"
+  integrity sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==
+
 function-bind@^1.1.1:
   version "1.1.1"
   resolved "https://registry.npmjs.org/function-bind/-/function-bind-1.1.1.tgz"
@@ -269,10 +319,10 @@ postcss@^8.4.14:
     picocolors "^1.0.0"
     source-map-js "^1.0.2"
 
-postprocessing@^6.31.0, postprocessing@>=6.28.0:
-  version "6.31.0"
-  resolved "https://registry.npmjs.org/postprocessing/-/postprocessing-6.31.0.tgz"
-  integrity sha512-h1g2KDVrTS6QB4AHP55opp8FYzq66jJHh4JIFCptaj283RUX1y/tPkv8FBB2oK4WYrdPgqvElnKrXZwgiLWeHQ==
+postprocessing@^6.37.4, postprocessing@>=6.28.0:
+  version "6.37.4"
+  resolved "https://registry.npmjs.org/postprocessing/-/postprocessing-6.37.4.tgz"
+  integrity sha512-O4dv29MDRSjXgMF1Luz3YHlT7NawKIliCfO2OgUCtIMTLNMCg+v0RLuT9/LQSDtVNXxUHGyy3mucbF3UePcElA==
 
 queue-microtask@^1.2.2:
   version "1.2.3"
@@ -352,10 +402,10 @@ terser@^5.4.0:
     commander "^2.20.0"
     source-map-support "~0.5.20"
 
-three@^0.156.0, "three@>= 0.138.0 < 0.153.0", three@>=0.141.0:
-  version "0.156.0"
-  resolved "https://registry.npmjs.org/three/-/three-0.156.0.tgz"
-  integrity sha512-r6meetGWDk3aYjDRh6NpKuUkzoPlI3yldDQe2SkwCcqTTB5NZn7vKQBUXyMExvlwZShaLmvAbsVWaFzp1rkk3A==
+three@^0.178.0, "three@>= 0.157.0 < 0.178.0", three@>=0.141.0:
+  version "0.178.0"
+  resolved "https://registry.npmjs.org/three/-/three-0.178.0.tgz"
+  integrity sha512-ybFIB0+x8mz0wnZgSGy2MO/WCO6xZhQSZnmfytSPyNpM0sBafGRVhdaj+erYh5U+RhQOAg/eXqw5uVDiM2BjhQ==
 
 toggle-selection@^1.0.6:
   version "1.0.6"

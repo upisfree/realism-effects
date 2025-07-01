@@ -1,5 +1,5 @@
 ﻿import { Pass } from "postprocessing"
-import { GLSL3, NoBlending, ShaderMaterial, Uniform, WebGLMultipleRenderTargets } from "three"
+import { GLSL3, NoBlending, ShaderMaterial, Uniform, WebGLRenderTarget } from "three"
 import basicVertexShader from "../../utils/shader/basic.vert"
 
 export class CopyPass extends Pass {
@@ -8,7 +8,10 @@ export class CopyPass extends Pass {
 	constructor(textureCount = 1) {
 		super("CopyPass")
 
-		this.renderTarget = new WebGLMultipleRenderTargets(1, 1, 1, { depthBuffer: false })
+		this.renderTarget = new WebGLRenderTarget(1, 1, {
+			depthBuffer: false,
+			count: 1
+		})
 
 		this.setTextureCount(textureCount)
 	}
@@ -49,7 +52,7 @@ export class CopyPass extends Pass {
 			this.fullscreenMaterial.uniforms["inputTexture" + i] = new Uniform(null)
 
 			if (i >= this.renderTarget.texture.length) {
-				const texture = this.renderTarget.texture[0].clone()
+				const texture = this.renderTarget.texture[0].clone() // TODO: will break?
 				texture.isRenderTargetTexture = true
 				this.renderTarget.texture.push(texture)
 			}

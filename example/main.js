@@ -22,7 +22,8 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js"
 import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader"
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js"
 import { RGBELoader } from "three/examples/jsm/loaders/RGBELoader"
-import { GroundProjectedSkybox } from "three/examples/jsm/objects/GroundProjectedSkybox"
+// import { GroundProjectedSkybox } from "three/examples/jsm/objects/GroundProjectedSkybox"
+// TODO: GroundedSkybox
 import { Pane } from "tweakpane"
 import { SharpnessEffect } from "../src/sharpness/SharpnessEffect"
 import { TAAPass } from "../src/taa/TAAPass"
@@ -47,7 +48,7 @@ let ssgiEffect
 let postprocessingEnabled = true
 let pane
 let gui2
-let envMesh
+// let envMesh
 let fps
 const guiParams = {
 	Method: "TRAA",
@@ -229,7 +230,7 @@ const initEnvMap = async envMap => {
 	scene.environment?.dispose()
 	envMap.mapping = EquirectangularReflectionMapping
 	scene.environment = envMap
-	setEnvMesh(envMap)
+	// setEnvMesh(envMap)
 }
 
 const cubeMapTest = () => {
@@ -239,29 +240,29 @@ const cubeMapTest = () => {
 			scene.background = envMesh
 			scene.environment = envMesh
 
-			setEnvMesh(envMesh)
+			// setEnvMesh(envMesh)
 		})
 }
 
-const setEnvMesh = envMap => {
-	if (!traaTest) {
-		envMesh?.removeFromParent()
-		envMesh?.material.dispose()
-		envMesh?.geometry.dispose()
-
-		envMesh = new GroundProjectedSkybox(envMap)
-		envMesh.radius = 100
-		envMesh.height = 20
-		envMesh.scale.setScalar(100)
-		envMesh.updateMatrixWorld()
-		// scene.add(envMesh)
-
-		const skyBlueColor = new Color(0x90b4f5)
-		scene.background = skyBlueColor
-
-		if (taaPass) taaPass.needsUpdate = true
-	}
-}
+// const setEnvMesh = envMap => {
+// 	if (!traaTest) {
+// 		envMesh?.removeFromParent()
+// 		envMesh?.material.dispose()
+// 		envMesh?.geometry.dispose()
+//
+// 		envMesh = new GroundProjectedSkybox(envMap)
+// 		envMesh.radius = 100
+// 		envMesh.height = 20
+// 		envMesh.scale.setScalar(100)
+// 		envMesh.updateMatrixWorld()
+// 		// scene.add(envMesh)
+//
+// 		const skyBlueColor = new Color(0x90b4f5)
+// 		scene.background = skyBlueColor
+//
+// 		if (taaPass) taaPass.needsUpdate = true
+// 	}
+// }
 
 const environments = [
 	"blue_grotto",

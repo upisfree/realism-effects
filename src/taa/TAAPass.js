@@ -90,6 +90,6 @@ export class TAAPass extends Pass {
 		renderer.setRenderTarget(null)
 		renderer.render(this.scene, this.camera)
 
-		renderer.copyFramebufferToTexture(this.renderTarget, this.framebufferTexture)
+		renderer.copyFramebufferToTexture(this.framebufferTexture, this.renderTarget)
 	}
 }

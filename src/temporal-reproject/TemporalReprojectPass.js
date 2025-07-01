@@ -8,7 +8,7 @@ import {
 	Quaternion,
 	Vector2,
 	Vector3,
-	WebGLMultipleRenderTargets
+	WebGLRenderTarget
 } from "three"
 import { jitter } from "../taa/TAAUtils"
 import { TemporalReprojectMaterial } from "./material/TemporalReprojectMaterial"
@@ -62,13 +62,15 @@ export class TemporalReprojectPass extends Pass {
 		this.textureCount = textureCount
 		options = { ...defaultTemporalReprojectPassOptions, ...options }
 
-		this.renderTarget = new WebGLMultipleRenderTargets(1, 1, textureCount, {
+		this.renderTarget = new WebGLRenderTarget(1, 1, {
 			minFilter: NearestFilter,
 			magFilter: NearestFilter,
 			type: texture.type,
-			depthBuffer: false
+			depthBuffer: false,
+			count: textureCount
 		})
 
+		// TODO: will break?
 		this.renderTarget.texture.forEach(
 			(texture, index) => (texture.name = "TemporalReprojectPass.accumulatedTexture" + index)
 		)
@@ -152,7 +154,7 @@ export class TemporalReprojectPass extends Pass {
 	}
 
 	get texture() {
-		return this.renderTarget.texture[0]
+		return this.renderTarget.texture[0] // TODO: will break?
 	}
 
 	reset() {

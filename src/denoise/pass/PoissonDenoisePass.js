@@ -1,6 +1,6 @@
 /* eslint-disable camelcase */
 import { Pass } from "postprocessing"
-import { GLSL3, HalfFloatType, ShaderMaterial, Vector2, WebGLMultipleRenderTargets } from "three"
+import { GLSL3, HalfFloatType, ShaderMaterial, Vector2, WebGLRenderTarget } from "three"
 // eslint-disable-next-line camelcase
 
 import gbuffer_packing from "../../gbuffer/shader/gbuffer_packing.glsl"
@@ -74,11 +74,12 @@ export class PoissonDenoisePass extends Pass {
 
 		const renderTargetOptions = {
 			type: HalfFloatType, // using HalfFloatType as FloatType with bilinear filtering isn't supported on some Apple devices
-			depthBuffer: false
+			depthBuffer: false,
+			count: textureCount
 		}
 
-		this.renderTargetA = new WebGLMultipleRenderTargets(1, 1, textureCount, renderTargetOptions)
-		this.renderTargetB = new WebGLMultipleRenderTargets(1, 1, textureCount, renderTargetOptions)
+		this.renderTargetA = new WebGLRenderTarget(1, 1, renderTargetOptions)
+		this.renderTargetB = new WebGLRenderTarget(1, 1, renderTargetOptions)
 
 		// give the textures of renderTargetA and renderTargetB names
 		this.renderTargetB.texture[0].name = "PoissonDenoisePass." + (isTextureSpecular[0] ? "specular" : "diffuse")
@@ -137,6 +138,7 @@ export class PoissonDenoisePass extends Pass {
 			const horizontal = i % 2 === 0
 			const inputRenderTarget = horizontal ? this.renderTargetB : this.renderTargetA
 
+			// TODO: weill break? textures array should be target.textures[], not target.texture
 			this.fullscreenMaterial.uniforms["inputTexture"].value = i === 0 ? this.textures[0] : inputRenderTarget.texture[0]
 			this.fullscreenMaterial.uniforms["inputTexture2"].value =
 				i === 0 ? this.textures[1] : inputRenderTarget.texture[1]
